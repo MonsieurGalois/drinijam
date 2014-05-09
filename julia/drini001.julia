@@ -1,0 +1,23 @@
+function lonelyones(n)
+	N=Set(n)
+	D=Dict()
+	for a in N
+		D[a]=0
+	end
+	for b in n
+		D[b]+=1
+	end
+	J=Int[]
+	for c in n
+		if D[c]>1
+			push!(J,c)
+		end
+	end
+	return J
+end
+
+A=[1,2,3,4,4,4,4,5,5,6,7,3,234,2,34,4,2,11,4,6,7]
+
+println(A)
+println(lonelyones(A))
+
