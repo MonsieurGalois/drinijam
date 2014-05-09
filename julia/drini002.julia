@@ -1,0 +1,12 @@
+function multipar(A)
+	p=A[end]
+	X=0
+	for x in 2:2:length(A)
+		X+=A[x]
+	end
+	return X*p
+end
+
+A=[1,3,5,6,2,2,3,4,6,2]
+
+println(multipar(A))
