@@ -1,23 +1,27 @@
-function lonelyones(n)
-	N=Set(n)
+function lonelyones(L)
+	N=Set(L)
 	D=Dict()
 	for a in N
 		D[a]=0
 	end
-	for b in n
+	for b in L
 		D[b]+=1
 	end
 	J=Int[]
-	for c in n
+	for c in L
 		if D[c]>1
 			push!(J,c)
 		end
 	end
 	return J
 end
+#Way by Drini
 
+function easyway(L)
+	return filter!(x -> length(findin(L,x))>1,L)
+end
 A=[1,2,3,4,4,4,4,5,5,6,7,3,234,2,34,4,2,11,4,6,7]
 
 println(A)
 println(lonelyones(A))
-
+println(easyway(A))
